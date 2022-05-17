@@ -5,11 +5,11 @@ const LocationCard = ({location}) => {
     return (
         <div className='location-card'>
             <h1>{location?.name}</h1>
-            <li>
-                <b>Type: </b> {location?.type}
-                <b>Dimension: </b> {location?.dimension}
-                <b>Population: </b> {location?.residents.length}
-            </li>
+            <ul>
+                <li><b>Type: </b> {location?.type}</li>
+                <li><b>Dimension: </b> {location?.dimension}</li>
+                <li><b>Population: </b> {location?.residents.length}</li>
+            </ul>
         </div>
     );
 };

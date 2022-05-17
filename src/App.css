@@ -17,15 +17,15 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   padding: 1rem;
 }
 
 .resident-card {
   border: 1px solid silver;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
-  /* width: auto; */
+  width: 300px;
 }
 
 .resident-card li {
@@ -33,14 +33,13 @@
 }
 
 .container-location{
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
   padding: 1rem;
 }
 
-.location-card li{
+.container-location li{
   list-style: none;
+  display: inline-block;
+  margin-left: 50px;
 }
 
 img{
