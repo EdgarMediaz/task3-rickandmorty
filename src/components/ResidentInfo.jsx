@@ -12,14 +12,23 @@ const ResidentInfo = ({resident}) => {
         .catch(err => console.log(err))
     }, [])
 
-    // console.log(character);
+    console.log(character);
+
+    const status = () => {
+        if(character?.status === 'Alive'){
+            return background='green'
+        } else {
+            return background= 'gray'
+        }
+    }
 
     return (
         <div className='resident-card'>
-            <h1>{character?.name}</h1>
             <img src={character?.image} alt="" />
+            <h1>{character?.name}</h1>
             <ul>
-                <li>{character?.status}</li>
+                <li style={{background: character?.status === 'Alive' ? 'green' : character?.status === 'Dead' ? 'red' : 'gray'}}>
+                    {character?.status}</li>
                 <li>Origin: {character?.origin.name}</li>
                 <li>Appearing episodes: {character?.episode.length}</li>
             </ul>

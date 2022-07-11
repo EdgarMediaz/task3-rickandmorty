@@ -41,24 +41,47 @@ function App() {
 
   console.log(location);
 
+  // PAGINATION---------->
+
+  const [page, setPage] = useState(1)
+
+  const residentNumbers = 6
+  const lastIndex = residentNumbers * page
+  const firstIndex = lastIndex-residentNumbers
+  const residentsPagination = location?.residents.slice(firstIndex, lastIndex)
+
+  const lastPage = Math.ceil(location?.residents.length / residentNumbers)
+
+  const pageNumbers = []
+  for(let i=1; i<=lastPage; i++){
+    pageNumbers.push(i)
+  }
+
   return (
     <div className="App">
       <div className='banner'>
         <img src={banner} alt="" />
+        <SearchBar setSearch={setSearch}/>
       </div>
       <div className='container-location'>
         <LocationCard location={location}/>
       </div>
-      <div className='container-search'>
-        <SearchBar setSearch={setSearch}/>
-      </div>
      <div className='container-residents'>
        {
-         location?.residents.map(resident=> (
+         residentsPagination?.map(resident=> (
           <ResidentInfo resident={resident} key={resident}/>
           ))
        }
      </div>
+     <button onClick={()=> setPage(page-1)} disabled={page===1}
+     >Prev</button>
+     {
+      pageNumbers.map(number=> (
+        <button onClick={()=> setPage(number)}>{number}</button>
+      ))
+     }
+     <button onClick={()=> setPage(page+1)} disabled={page===lastPage}
+     >Next</button>
     </div>
   );
 }

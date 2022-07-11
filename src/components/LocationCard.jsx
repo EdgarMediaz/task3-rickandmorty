@@ -2,6 +2,7 @@ import React from 'react';
 
 const LocationCard = ({location}) => {
     // console.log(location);
+
     return (
         <div className='location-card'>
             <h1>{location?.name}</h1>

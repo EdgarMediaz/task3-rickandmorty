@@ -9,10 +9,28 @@
 
 .App {
   text-align: center;
-  padding: 50px;
   background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
 
+form {
+  position: absolute;
+  top: 13%;
+  right: 30%;
+  width: 40%;
+}
+form input {
+  width: 70%;
+  height: 2rem;
+}
+form button {
+  height: 2rem;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.685);
+}
+button:hover {
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+}
 .container-residents{
   display: flex;
   justify-content: center;
@@ -27,22 +45,33 @@
   border-radius: 10px;
   width: 300px;
 }
+.resident-card:hover {
+  box-shadow: 0 0 20px #fff, 0 0 30px #C0C0C0, 0 0 40px #C0C0C0, 0 0 50px #C0C0C0, 0 0 60px #C0C0C0, 0 0 70px #C0C0C0, 0 0 80px #C0C0C0;
+}
 
 .resident-card li {
   list-style: none;
 }
 
 .container-location{
+  box-shadow: 0 10px 20px 0 hsl(234, 12%, 20%);
   padding: 1rem;
+  margin: 1rem ;
 }
 
-.container-location li{
+.container-location ul{
   list-style: none;
-  display: inline-block;
-  margin-left: 50px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 img{
   max-width: 100%;
   height: auto;
+}
+
+@media only screen and (min-width: 992px) {
+  form {
+    top: 45%;
+  }
 }
