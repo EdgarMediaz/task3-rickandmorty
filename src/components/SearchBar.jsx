@@ -25,7 +25,7 @@ const SearchBar = ({setSearch}) => {
 
     return (
         <form onSubmit={submit}>
-            <input type="text" placeholder='type a location id number (1-126)'
+            <input type="number" placeholder='type a location id number (1-126)'
             onChange={e=> setLocation(e.target.value)}
             value={location}
             />

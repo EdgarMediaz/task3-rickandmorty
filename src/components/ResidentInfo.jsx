@@ -14,14 +14,6 @@ const ResidentInfo = ({resident}) => {
 
     console.log(character);
 
-    const status = () => {
-        if(character?.status === 'Alive'){
-            return background='green'
-        } else {
-            return background= 'gray'
-        }
-    }
-
     return (
         <div className='resident-card'>
             <img src={character?.image} alt="" />
